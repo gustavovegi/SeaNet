@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class CadastroPescador extends JFrame {
 
     public CadastroPescador() {
-        setTitle("Cadastro de Usuário");
+        setTitle("Cadastro Pescador");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -27,8 +27,8 @@ public class CadastroPescador extends JFrame {
         JLabel senhaLabel = new JLabel("Senha:");
         JPasswordField senhaField = new JPasswordField();
 
-        JLabel rgbLabel = new JLabel("RGB:");
-        JTextField rgbField = new JTextField();
+        JLabel rgpLabel = new JLabel("RGP:");
+        JTextField rgpField = new JTextField();
 
         JLabel embarcacaoLabel = new JLabel("Embarcação:");
         JTextField embarcacaoField = new JTextField();
@@ -43,8 +43,8 @@ public class CadastroPescador extends JFrame {
         panel.add(senhaLabel);
         panel.add(senhaField);
 
-        panel.add(rgbLabel);
-        panel.add(rgbField);
+        panel.add(rgpLabel);
+        panel.add(rgpField);
 
         panel.add(embarcacaoLabel);
         panel.add(embarcacaoField);
@@ -59,7 +59,7 @@ public class CadastroPescador extends JFrame {
 
                 String nome = nomeField.getText();
                 String senha = new String(senhaField.getPassword());
-                String rgb = rgbField.getText();
+                String rgb = rgpField.getText();
                 String embarcacao = embarcacaoField.getText();
 
 

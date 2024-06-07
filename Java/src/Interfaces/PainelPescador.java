@@ -50,15 +50,15 @@ public class PainelPescador extends JFrame{
                             "ERRO", JOptionPane.ERROR_MESSAGE);
                 } else if ( regionComboBox.getSelectedIndex() != 0 && habitatComboBox.getSelectedIndex() == 0 ){
                     System.out.println("entrei");
-                    ArrayList<String> peixes = pescador.listar(selectedRegion);
+                    ArrayList<String> peixes = pescador.listarPeixes(selectedRegion);
                     JOptionPane.showMessageDialog(null, "Peixes selecionados: "+peixes,
                             "Peixes por Região", JOptionPane.INFORMATION_MESSAGE);
                 }else if ( regionComboBox.getSelectedIndex() == 0 && habitatComboBox.getSelectedIndex() != 0 ){
-                    ArrayList<String> peixes = pescador.listar(selectedHabitat);
+                    ArrayList<String> peixes = pescador.listarPeixes(selectedHabitat);
                     JOptionPane.showMessageDialog(null, "Peixes da região selecionada: "+peixes,
                             "Peixes selecionados:", JOptionPane.INFORMATION_MESSAGE);
                 }else if ( regionComboBox.getSelectedIndex() != 0 && habitatComboBox.getSelectedIndex() != 0 ){
-                    ArrayList<String> peixes = pescador.listar(selectedRegion, selectedHabitat);
+                    ArrayList<String> peixes = pescador.listarPeixes(selectedRegion, selectedHabitat);
                     JOptionPane.showMessageDialog(null, "Peixes da região selecionada: "+peixes,
                             "Peixes selecionados:", JOptionPane.INFORMATION_MESSAGE);
                 }

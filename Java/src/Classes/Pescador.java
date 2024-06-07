@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Pescador extends Usuario {
-    private String rgb;
+    private String rgp;
     private String embarcacao;
 
-    public Pescador(String nome, String senha, String rgb, String embarcacao) {
+    public Pescador(String nome, String senha, String rgp, String embarcacao) {
         super(nome, senha);
-        this.rgb = rgb;
+        this.rgp = rgp;
         this.embarcacao = embarcacao;
     }
 
-    public String getRgb() {
-        return rgb;
+    public String getRgp() {
+        return rgp;
     }
 
-    public void setRgb(String rgb) {
-        this.rgb = rgb;
+    public void setRgp(String rgp) {
+        this.rgp = rgp;
     }
 
     public String getEmbarcacao() {
@@ -29,16 +29,18 @@ public class Pescador extends Usuario {
         this.embarcacao = embarcacao;
     }
 
+    //Sobrescrita da classe mãe, adaptando a verificação para credencial do pescador
     @Override
-    public boolean verificacao(String rgb) {
-        if (rgb.length() == 8) {
+    public boolean verificacao(String rgp) {
+        if (rgp.length() == 8) {
             return true;
         } else {
             return false;
         }
     }
 
-    public ArrayList<String> listar(String regiaoOuHabitat) {
+    //Método de sobrecarga, lista peixes dependendo dos parametros passados pelo usuário(região e habitat)
+    public ArrayList<String> listarPeixes(String regiaoOuHabitat) {
         if (regiaoOuHabitat.equals("Norte")) {
             return new ArrayList<>(Arrays.asList("Salmão do Atlântico", "Truta", "Bacalhau"));
         } else if (regiaoOuHabitat.equals("Sul")) {
@@ -52,7 +54,8 @@ public class Pescador extends Usuario {
         return null;
     }
 
-    public ArrayList<String> listar(String regiao, String habitat) {
+    //Método de sobrecarga, lista peixes dependendo dos parametros passados pelo usuário(região e habitat)
+    public ArrayList<String> listarPeixes(String regiao, String habitat) {
         if (regiao.equals("Norte") && habitat.equals("Oceano") ) {
             return new ArrayList<>(Arrays.asList("Salmão do Atlântico", "Truta", "Bacalhau"));
         } else if (regiao.equals("Norte") && habitat.equals("Rio")) {

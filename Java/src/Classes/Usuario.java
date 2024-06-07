@@ -36,7 +36,7 @@ public class Usuario {
         this.senha = senha;
     }
 
-
+    //Realiza a verificação da credencial passada pelo usuário
     public boolean verificacao(String verificacao) {
         if (verificacao.length()==5) {
             return true;

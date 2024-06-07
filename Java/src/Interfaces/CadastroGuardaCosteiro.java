@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 public class CadastroGuardaCosteiro extends JFrame{
 
     public CadastroGuardaCosteiro(){
-        setTitle("Cadastro de Usuário");
+        setTitle("Cadastro Guarda Costeiro");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

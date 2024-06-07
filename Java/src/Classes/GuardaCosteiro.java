@@ -38,38 +38,39 @@ public class GuardaCosteiro extends Usuario {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
-
+    //Sobrescrita da classe mãe, adaptando a verificação para credencial do guarda costeiro
     @Override
-    public boolean verificacao(String rpm) {
-        if (rpm.length()==10) {
+    public boolean verificacao(String cac) {
+        if (cac.length()==10) {
             return true;
         }else{
             return false;
         }
     }
-
-    public ArrayList<String> listar(String regiaoOuHabitat) {
-        if (regiaoOuHabitat.equals("Norte")) {
+    //Método de sobrecarga, lista pescadores dependendo dos parametros passados pelo usuário(região e tipo de pesca)
+    public ArrayList<String> listarPescadores(String regiaoOutipoPesca) {
+        if (regiaoOutipoPesca.equals("Norte")) {
             return new ArrayList<>(Arrays.asList("Lucas Manoel", "Cristovão Machado", "Miguel Paulista"));
-        } else if (regiaoOuHabitat.equals("Sul")) {
+        } else if (regiaoOutipoPesca.equals("Sul")) {
             return new ArrayList<>(Arrays.asList("Carlos Miguel", "Laura Silva", "Augusto Vieira"));
-        }else if (regiaoOuHabitat.equals("Água Doce")) {
+        }else if (regiaoOutipoPesca.equals("Água Doce")) {
             return new ArrayList<>(Arrays.asList("Celine Rodrigues", "Jordan Machado", "Gabriel Rodrigues"));
-        }else if (regiaoOuHabitat.equals("Água Salgada")) {
+        }else if (regiaoOutipoPesca.equals("Água Salgada")) {
             return new ArrayList<>(Arrays.asList("Rodrigo Romulo", "Luisa Silva", "Karina Reis"));
         }
 
         return null;
     }
 
-    public ArrayList<String> listar(String regiao, String habitat) {
-        if (regiao.equals("Norte") && habitat.equals("Água Doce") ) {
+    //Método de sobrecarga, lista pescadores dependendo dos parametros passados pelo usuário(região e tipo de pesca)
+    public ArrayList<String> listarPescadores(String regiao, String tipoPesca) {
+        if (regiao.equals("Norte") && tipoPesca.equals("Água Doce") ) {
             return new ArrayList<>(Arrays.asList("Carlos Miguel", "Laura Silva", "Augusto Vieira"));
-        } else if (regiao.equals("Norte") && habitat.equals("Água Salgada")) {
+        } else if (regiao.equals("Norte") && tipoPesca.equals("Água Salgada")) {
             return new ArrayList<>(Arrays.asList("Rodrigo Romulo", "Luisa Silva", "Karina Reis"));
-        }else if (regiao.equals("Sul") && habitat.equals("Água Salgada")) {
+        }else if (regiao.equals("Sul") && tipoPesca.equals("Água Salgada")) {
             return new ArrayList<>(Arrays.asList("Celine Rodrigues", "Jordan Machado", "Gabriel Rodrigues"));
-        }else if (regiao.equals("Sul") && habitat.equals("Água Doce")) {
+        }else if (regiao.equals("Sul") && tipoPesca.equals("Água Doce")) {
             return new ArrayList<>(Arrays.asList("Lucas Manoel", "Cristovão Machado", "Miguel Paulista"));
         }
 

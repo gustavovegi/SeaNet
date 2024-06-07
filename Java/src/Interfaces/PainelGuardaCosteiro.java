@@ -15,7 +15,7 @@ public class PainelGuardaCosteiro extends JFrame{
 
     public PainelGuardaCosteiro(GuardaCosteiro guarda) {
         // Configurações básicas do JFrame
-        setTitle("Painel Pescador");
+        setTitle("Painel Guarda Costeiro");
         setSize(400, 150);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -45,19 +45,19 @@ public class PainelGuardaCosteiro extends JFrame{
 
                 if (regionComboBox.getSelectedIndex() == 0 && tipoPescaComboBox.getSelectedIndex() == 0) {
                     JOptionPane.showMessageDialog(null,
-                            "Selecione uma região ou um habitat.",
+                            "Selecione uma região ou um tipo de pesca.",
                             "ERRO", JOptionPane.ERROR_MESSAGE);
                 } else if ( regionComboBox.getSelectedIndex() != 0 && tipoPescaComboBox.getSelectedIndex() == 0 ){
                     System.out.println("entrei");
-                    ArrayList<String> peixes = guarda.listar(selectedRegion);
+                    ArrayList<String> peixes = guarda.listarPescadores(selectedRegion);
                     JOptionPane.showMessageDialog(null, "Peixes selecionados: "+peixes,
                             "Peixes por Região", JOptionPane.INFORMATION_MESSAGE);
                 }else if ( regionComboBox.getSelectedIndex() == 0 && tipoPescaComboBox.getSelectedIndex() != 0 ){
-                    ArrayList<String> peixes = guarda.listar(selectedHabitat);
+                    ArrayList<String> peixes = guarda.listarPescadores(selectedHabitat);
                     JOptionPane.showMessageDialog(null, "Peixes da região selecionada: "+peixes,
                             "Peixes selecionados:", JOptionPane.INFORMATION_MESSAGE);
                 }else if ( regionComboBox.getSelectedIndex() != 0 && tipoPescaComboBox.getSelectedIndex() != 0 ){
-                    ArrayList<String> peixes = guarda.listar(selectedRegion, selectedHabitat);
+                    ArrayList<String> peixes = guarda.listarPescadores(selectedRegion, selectedHabitat);
                     JOptionPane.showMessageDialog(null, "Peixes da região selecionada: "+peixes,
                             "Peixes selecionados:", JOptionPane.INFORMATION_MESSAGE);
                 }
